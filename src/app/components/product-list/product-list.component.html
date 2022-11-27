@@ -1,0 +1,100 @@
+
+   
+ 
+ 
+
+
+
+
+<div 
+class="d-flex">
+<h1 class="display-6">Product List</h1>
+<div class="ms-3 d-flex align-items-center">
+ 
+  <!-- one way binding(tek yönlü atama) -->
+  <!-- #Two Way binding(en temel,klasik): event gerekir ve value değerini dinamik geçmek gerekir. -->
+  <!-- #Two Wat Binding:[(ngModel)] ile input değerini bir state ile,iki yönlü olarak birbirine bağlayabiliriz. -->
+<input 
+type="text" 
+class="form-control"
+id="searchProductNameInput"
+placeholder="Search.."
+(keyup)="onSearchProductNameChange($event)"
+[(ngModel)]="searchProductNameInput"
+/>
+<!-- [value]="searchProductNameInput" -->
+<!-- $event ilgili event'in özelliklerinin bulunduğu html tarafından geçilen js objesi angular tarafından geçilecektir. -->
+</div>
+</div>
+
+<div *ngIf = "isLoading===false"
+class="d-flex justify-content-center spinner-icon">
+  <div class="spinner-border" role="status">
+    <span class="sr-only"></span>
+  </div>
+</div>
+
+<div *ngIf = "isLoading!==false"
+ class="row">
+  
+  <!-- unordered list -->
+  <!--# Built-in Directive -->
+
+  <!--# *ngFor is a built-in structural directive -->
+  <!-- <div *ngFor="let product of products"> -->
+
+  <!--# Attribute directive -->
+ 
+
+  <ng-template 
+  ngFor let-productListItem [ngForOf]="filteredProducts"
+  
+  >
+  
+  
+    <!-- Sanal, html tarafında render'lanmayan veya bir etikete karşılık gelmeyen bir etiket olacak. -->
+    <!--# *ngIf -->
+   
+   
+    <div
+      *ngIf="isProductCardShow(productListItem); else  productDiscontinued "
+      [class]="productCardClass"
+    >
+    
+      <div class="card-body">
+        
+        <h5 class="card-title"
+      
+  >{{ productListItem.label }}</h5>
+        <p class="card-text">
+        </p>
+        <a href="#" class="btn btn-primary">Add to Cart</a>
+      </div>
+      
+    </div>
+    
+    <!-- list istem -->
+<!-- //-- -->
+    <ng-template #productDiscontinued>
+      
+      <div *ngIf="productListItem.label!='name'"
+        class="{{
+          productCardClass
+        }} d-flex justify-content-center align-items-center"
+      >
+      
+        <p>{{ productListItem.label }} ürünü şuan satılmıyor.</p>
+      </div>
+      
+    </ng-template>
+   
+  </ng-template>
+
+ 
+  <div *ngIf="filteredProducts.length==0"
+  class="alert alert-primary" role="alert">
+    Filtrelere Uygun Ürün yok
+  </div>
+  
+  <!-- </div> -->
+</div>
