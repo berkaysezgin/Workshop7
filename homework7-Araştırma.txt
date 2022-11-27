@@ -1,0 +1,48 @@
+
+--TypeScript Null ve Undefined--
+
+Kısacası; undefined , o şeyin hiçbir fikrinin olmadığı yerdir; türü yok ve bu kapsamda daha önce hiç referans alınmadığı, 
+“değer yok” anlamına gelir. 
+Başlatılmamış değişkenler, eksik parametreler ve bilinmeyen değişkenler bu değere sahiptir.; 
+null , varlığın bilindiği yer, ancak değerin ne olduğu bilinmemektedir.
+
+--HTTP Request --
+
+-Nedir-
+Şu anda Web / Mobil uygulamaların çoğunda ekranınızda gördüğünüz listeler ve veriler veya 
+buradan bir sipariş verdiğinizde vb… %90 sayfalarda işletile istemci/sunucu iletişim yöntemidir.
+
+-Yapısı-
+HTTP Request / Response. İki kısımdan oluşur, Request(istek) ve bunun Response (Cevap) tan oluşur. 
+Request içerisinde Method, Path, Version Control ve Header kısmından oluşur.
+-En Sık Karşılaşılan Status Kodları-
+200 Durum Kodu (Başarılı) ...
+301 Durum Kodu (Kalıcı Yönlendirme) ...
+302 Durum Kodu (Geçici Yönlendirme) ...
+403 Durum Kodu (Erişim İzni Sorunu) ...
+404 Durum Kodu (Bulunamadı) ...
+410 Durum Kodu (Kalıcı Olarak Bulunmuyor) ...
+500 Durum Kodu (Sunucu Hatası) ...
+503 Durum Kodu (Sunucu Kullanılamıyor)
+
+--TypeScript Interface--
+
+TypeScript'deki interface, temelinde bir tip tanımından başka birşey değildir. 
+class ve function'lar nesnelerin davranışlarını tanımlarken, interface'ler nesnelerin tiplerini tanımlar şeklinde düşünebiliriz.
+
+--Class ve Object farkı--
+
+Sınıf (class) soyut bir veri tipidir. Nesne (object) ise onun somutlaşan bir cismidir.
+İlk önce sınıf tanımlanır ve kullanılmayı bekler, biz o sınıftan bir nesne türetirsek artık o sınıf bir anlam taşımaktadır,
+Sınıflar genelde şahıs, yer ya da bir nesnenin ismini temsil ederler,
+Sınıflar methodları ile nesnelerin davranışlarını, değişkenleri ile ise nesnelerin durumlarını temsil ederler.
+Daha önce oluşturulan sınıftan bir nesne yaratılır,
+Yaratılan nesne içerisine sınıfımızın bize sağladığı kullanım alanlarını kullanarak nesnemizi oluşturup kullanmaya başlayabiliriz,
+Örnek vermek gerekirse, Ağaç bir sınıftır, alt sınıf ise ne ağacı olduğunu belirtebilir, mesela elma ağacı örneği verirsek, 
+mevcut sınıfın özelliklerinde meyve olan elmanın özelliklerinden tutunda ağacın dal sayısına kadar çeşitli parametreler veya 
+ağacın yıllık üretim miktarını hesaplayan metotlar olabilir,
+
+--Ioc ve Dependency Injection--
+
+Dependency Injection,IoC containerın içierisindeki referansları kullanmamızı sağlayan bir mekanizmadır.
+IoC (Inversion of Control),referanların tutulduğu bir container'dır
